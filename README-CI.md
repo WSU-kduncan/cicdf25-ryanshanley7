@@ -36,22 +36,23 @@ This command will build the image <br>
 Docker images tag requirements should be used, for example
 ```
 [dockerhub-username]/[repository-name]:[tag]
-ryanshanley7/p4site:latest
+shanley4/p4site:latest
 ```
 Log into dockerhub using this command. <br>
 `docker login` <br>
 You can then push the image to dockerhub. <br>
 ```
 docker push [dockerhub-username]/[image-name]:latest
-docker push ryanshanley7/p4site:latest
+docker push shanley4/p4site:latest
 ```
 Then to run the container locally use this command. <br>
 ```
-docker run -d -p 8080:80 [your github username]/[image-name]:latest
-docker run -d -p 8080:80 ryanshanley7/p4site:latest
+docker run -d -p 8080:80 [dockerhub-username]/[image-name]:latest
+docker run -d -p 8080:80 shanley4/p4site:latest
 ```
 The website should then be running, you can check by pasting this into any browser. <br>
 `http://localhost:8080` <br>
+
 
 
 
