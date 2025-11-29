@@ -5,7 +5,7 @@ In this section I created a docker container image, which hosts my Honda Civic T
 The index.html, specs.html, and styles.css web server code are stored in this repository and linked below. These are used to build <br>
 and run a fully functional container.
 
-## Website Content
+### Website Content
 The web content below can be found by navigating to the "web-content" folder in this repository or by going to the links below.
 
 - [`web-content/index.html`](web-content/index.html)
@@ -15,7 +15,7 @@ The web content below can be found by navigating to the "web-content" folder in 
 Because this is the same website from project 3, the prompt for it did not change and was as follows <br>
 "make me a website that is honda civic type r themed and has 2 html pages, and a css page."
 
-## Dockerfile Explanation
+### Dockerfile Explanation
 The Dockerfile below can be found by navigating to the root of this repository or by going to the links below. <br>
 The content of the Dockerfile are also located below the link.
 
@@ -53,10 +53,16 @@ docker run -d -p 8080:80 shanley4/p4site:latest
 The website should then be running, you can check by pasting this into any browser. <br>
 `http://localhost:8080` <br>
 
-## Part 1 Citations
+### Part 1 Citations
 There were no citations for part 1 because it was mostly just redoing steps from Project 3. <br>
 
 ## Part 2 – GitHub Actions and DockerHub
+
+### Configuring GitHub Repository Secrets
+
+### CI with GitHub Actions
+
+### Testing & Validating
 
 
 
