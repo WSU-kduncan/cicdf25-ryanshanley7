@@ -1,5 +1,5 @@
 # Project 4 – Continuous Integration (CI)  
-## Part 1 – Dockerfile & Building Images
+## Part 1 – Create a Docker container image
 
 In this section I created a docker container image, which hosts my Honda Civic Type R website using Apache HTTP server (httpd:2.4) <br>
 The index.html, specs.html, and styles.css web server code are stored in this repository and linked below. These are used to build <br>
@@ -52,6 +52,11 @@ docker run -d -p 8080:80 shanley4/p4site:latest
 ```
 The website should then be running, you can check by pasting this into any browser. <br>
 `http://localhost:8080` <br>
+
+## Part 1 Citations
+There were no citations for part 1 because it was mostly just redoing steps from Project 3. <br>
+
+## Part 2 – GitHub Actions and DockerHub
 
 
 
