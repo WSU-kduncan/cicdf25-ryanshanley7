@@ -57,12 +57,17 @@ The website should then be running, you can check by pasting this into any brows
 There were no citations for part 1 because it was mostly just redoing steps from Project 3. <br>
 
 ## Part 2 – GitHub Actions and DockerHub
-
 ### Configuring GitHub Repository Secrets
+- To create a PAT for authentication you first want to log into `https://hub.docker.com`
+- Click on your profile icon and click "account settings"
+- Click on "Personal access tokens" then click "Generate new token"
+- Give it a name you will remember, then set the scope to "Read/Write"
+- Save the token in a place you won't forget as it will be used later for GitHub actions to authenticate with DockerHub
 
 ### CI with GitHub Actions
 
 ### Testing & Validating
+
 
 
 
