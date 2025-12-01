@@ -143,5 +143,30 @@ The following values need to be changed if someone were to copy this repository 
 [`Workflow File`](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/.github/workflows/docker-publish.yml)
 
 ### Testing & Validating
+To test and validate if things are working properly heres what to do.
+- Navigate to your own GitHub Repository.
+- Click on the "Actions" Tab.
+- Make sure that the job status shows a green checkmark
+- If there are any errors it did not work properly.
 
+To verify that the image was pushed to DockerHub,
+- Navigate to your own DockerHub repository.
+- Make sure the the repository exist.
+- There should be a recent timestamp.
+- The image size is shown and the layers match.
+
+Useful commands
+`docker pull shanley4/p4site:latest` <br>
+`docker run -d -p 8080:80 shanley4/p4site:latest` <br>
+Then in your browser go to `http://localhost:8080` <br><br>
+My DockerHub repository
+[`DockerHub Repo`](https://hub.docker.com/r/shanley4/p4site)
+
+### Sources
+https://hub.docker.com/_/httpd <br>
+https://docs.docker.com/reference/dockerfile <br>
+https://github.com/docker/build-push-action <br>
+https://docs.docker.com/reference/cli/docker/image/push/ <br>
+https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets <br>
+https://stackoverflow.com/questions/64860458/how-to-correctly-push-a-docker-image-using-github-actions <br>
 
