@@ -162,7 +162,7 @@ Then in your browser go to `http://localhost:8080` <br><br>
 My DockerHub repository
 [`DockerHub Repo`](https://hub.docker.com/r/shanley4/p4site)
 
-### Sources
+### Part 2 Citations
 https://hub.docker.com/_/httpd <br>
 https://docs.docker.com/reference/dockerfile <br>
 https://github.com/docker/build-push-action <br>
@@ -170,3 +170,4 @@ https://docs.docker.com/reference/cli/docker/image/push/ <br>
 https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets <br>
 https://stackoverflow.com/questions/64860458/how-to-correctly-push-a-docker-image-using-github-actions <br>
 
+## Part 3 - Semantic Versioning
