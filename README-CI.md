@@ -257,10 +257,12 @@ docker pull shanley4/p4site:4.0.0
 ```
 - You can then run them locally with this command
 `docker run -d -p 8080:80 shanley4/p4site:4.0.0`
-- Then go to `http://localhost:8080/` and the website should load.<br>
-
+- Then go to `http://localhost:8080/` and the website should load.<br> <br>
+![docker tags](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/images/Docker%20tags.png) <br> <br>
 [`DockerHub Repo`](https://hub.docker.com/r/shanley4/p4site/tags)
 
 ### Part 3 Citations
-
+https://docs.docker.com/reference/cli/docker/image/tag/ <br>
+https://git-scm.com/book/en/v2/Git-Basics-Tagging <br>
+https://docs.docker.com/build/ci/github-actions/manage-tags-labels/ <br>
 
