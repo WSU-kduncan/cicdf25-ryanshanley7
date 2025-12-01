@@ -171,3 +171,11 @@ https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows
 https://stackoverflow.com/questions/64860458/how-to-correctly-push-a-docker-image-using-github-actions <br>
 
 ## Part 3 - Semantic Versioning
+
+### Generating tags
+
+### Semantic Versioning Container Images with GitHub Actions
+
+### Testing & Validating
+
+### Part 3 Citations
