@@ -61,12 +61,40 @@ There were no citations for part 1 because it was mostly just redoing steps from
 - To create a PAT for authentication you first want to log into `https://hub.docker.com`
 - Click on your profile icon and click "account settings"
 - Click on "Personal access tokens" then click "Generate new token"
-- Give it a name you will remember, then set the scope to "Read/Write"
-- Save the token in a place you won't forget as it will be used later for GitHub actions to authenticate with DockerHub
+- Give it a name you will remember, then set the scope to "Read/Write" which is recommended for CI/CD push access
+- Save the token in a place you won't forget as it will be used later for GitHub actions to authenticate with DockerHub <br><br>
+
+- To set repository secrets for use by GitHub Actions follow these instructions
+- In your GitHub repository, click settings.
+- Click on "Secrets and Variables" then "Actions"
+- Click "New repository secret"
+- Name the secret "DOCKER_USERNAME" and put your docker username in the value field.
+- Then make another secret and name it "DOCKERHUB_TOKEN" and put your token from earlier in the value field.
+- These secrets can now be used by using the ${{ secrets.NAME }} syntax. <br><br>
+
+Below are the secrets I personally used for this project.
+```
+DOCKER_USERNAME
+This secret is used by the workflow and allows for authentication.
+Value: shanley4
+
+DOCKER_TOKEN
+This secret is for my docker token I created, and allows for read and write enabled
+authetnication for GitHub Actions
+Value: [My dockerhub token]
+```
+You can use these secrets with this syntax
+```
+${{ secrets.DOCKER_USERNAME }}
+${{ secrets.DOCKER_TOKEN }}
+```
+These secrets provide for a login into DockerHub, building and pushing docker images, and running a workflow without exposing passwords. <br>
 
 ### CI with GitHub Actions
 
+
 ### Testing & Validating
+
 
 
 
