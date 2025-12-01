@@ -19,7 +19,7 @@ Because this is the same website from project 3, the prompt for it did not chang
 The Dockerfile below can be found by navigating to the root of this repository or by going to the links below. <br>
 The content of the Dockerfile are also located below the link.
 
-- [`Dockerfile`](Dockerfile)
+- [`Dockerfile`](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/Dockerfile)
 
 ```
 FROM httpd:2.4
@@ -132,15 +132,16 @@ Below are the workflow steps and explanations.
     push: true
     tags: shanley4/p4site:latest
 ```
+The following values need to be changed if someone were to copy this repository straight up. <br>
+- tags: shanley4/p4site:latest | tags: <dockerhub-username>/<image-name>:latest
+- These secrets must be created.  
+- DOCKER_USERNAME | username: ${{ secrets.DOCKER_USERNAME }}
+- DOCKER_TOKEN    | password: ${{ secrets.DOCKER_TOKEN }}
+- file: ./Dockerfile | Make sure this filepath is correct if it gets moved or renamed.
+- branches: [ "main" ] | Make sure your repository doesnt use a different branch, or change it to the correct branch.
+
+[`Workflow File`](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/.github/workflows/docker-publish.yml)
 
 ### Testing & Validating
-
-
-
-
-
-
-
-
 
 
