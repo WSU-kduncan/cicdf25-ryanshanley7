@@ -235,8 +235,32 @@ These values must be updated if this repository is copied into a different one.
 
 [`Workflow File`](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/.github/workflows/docker-publish.yml)
 
-
 ### Testing & Validating
+To test that this worked follow these steps.
+- Go to your GitHub Repository
+- Click on "Actions" tab
+- The runs will show a green checkmark if they worked.
+- In DockerHub the tags should be the following.
+```
+latest
+major (example: 4)
+major.minor (example: 4.0)
+major.minor.patch (example: 4.0.0)
+```
+- Numbers may differ but if the tags appear, DockerHub received the versioned images successfully.
+- To test them locally from DockerHub use these commands.
+```
+docker pull shanley4/p4site:latest
+docker pull shanley4/p4site:4
+docker pull shanley4/p4site:4.0
+docker pull shanley4/p4site:4.0.0
+```
+- You can then run them locally with this command
+`docker run -d -p 8080:80 shanley4/p4site:4.0.0`
+- Then go to `http://localhost:8080/` and the website should load.<br>
+
+[`DockerHub Repo`](https://hub.docker.com/r/shanley4/p4site/tags)
 
 ### Part 3 Citations
+
 
