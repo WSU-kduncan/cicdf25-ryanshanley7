@@ -171,11 +171,72 @@ https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows
 https://stackoverflow.com/questions/64860458/how-to-correctly-push-a-docker-image-using-github-actions <br>
 
 ## Part 3 - Semantic Versioning
-
 ### Generating tags
+To see the tags in the GitHub repository you can use this command `git tag` or `git show-ref --tags` <br>
+To do it on the browser vesion, you can click on "tags" in the release section. <br>
+
+To generate a tag use this command `git tag -a v1.0.0 -m "version 1.0.0"` <br>
+Heres an example of one I did `git tag -a v4.0.0 -m "version 4.0.0"` <br>
+
+To push that tag use this command `git push origin v1.0.0`<br>
 
 ### Semantic Versioning Container Images with GitHub Actions
+The workflow trigger is the same as in part 2 except for the main tag is now changed to the version tag.
+```
+on:
+  push:
+    tags:
+      - "v*.*.*"
+```
+
+Here are the steps for the workflow.
+- This pulls the repos code into the GitHub Actions runner. 
+```
+- name: Checkout repository
+  uses: actions/checkout@v4
+```
+- This step generates all the docker tags needed, and is based on the git tag.
+```
+- name: Extract Docker metadata (tags + labels)
+  id: meta
+  uses: docker/metadata-action@v5
+  with:
+    images: shanley4/p4site
+```
+- This step prepares docker builder.
+```
+- name: Set up Docker Buildx
+  uses: docker/setup-buildx-action@v3
+```
+- This step uses the repository secrets we set up previously, to authetnicate.
+```
+- name: Login to DockerHub
+  uses: docker/login-action@v3
+  with:
+    username: ${{ secrets.DOCKER_USERNAME }}
+    password: ${{ secrets.DOCKER_TOKEN }}
+```
+- This step builds the container image, and pushes the generated tags to DockerHub.
+```
+- name: Build and Push Docker Image
+  uses: docker/build-push-action@v5
+  with:
+    context: .
+    file: ./Dockerfile
+    push: true
+    tags: ${{ steps.meta.outputs.tags }}
+    labels: ${{ steps.meta.outputs.labels }}
+```
+These values must be updated if this repository is copied into a different one.
+
+- images: shanley4/p4site
+- Add your own repository secrets like in step 2.
+- file: ./Dockerfile
+
+[`Workflow File`](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/.github/workflows/docker-publish.yml)
+
 
 ### Testing & Validating
 
 ### Part 3 Citations
+
