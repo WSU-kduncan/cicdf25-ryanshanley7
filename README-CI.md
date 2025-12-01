@@ -163,12 +163,12 @@ My DockerHub repository
 [`DockerHub Repo`](https://hub.docker.com/r/shanley4/p4site)
 
 ### Part 2 Citations
-https://hub.docker.com/_/httpd <br>
-https://docs.docker.com/reference/dockerfile <br>
-https://github.com/docker/build-push-action <br>
-https://docs.docker.com/reference/cli/docker/image/push/ <br>
-https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets <br>
-https://stackoverflow.com/questions/64860458/how-to-correctly-push-a-docker-image-using-github-actions <br>
+https://hub.docker.com/_/httpd Used for docker documentation<br>
+https://docs.docker.com/reference/dockerfile Used for my dockerfile<br>
+https://github.com/docker/build-push-action Used for building with docker and github<br>
+https://docs.docker.com/reference/cli/docker/image/push/ Used for docker images<br>
+https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets Used for secrets and workflow<br>
+https://stackoverflow.com/questions/64860458/how-to-correctly-push-a-docker-image-using-github-actions Used for docker images and pushing<br>
 
 ## Part 3 - Semantic Versioning
 ### Generating tags
@@ -262,7 +262,8 @@ docker pull shanley4/p4site:4.0.0
 [`DockerHub Repo`](https://hub.docker.com/r/shanley4/p4site/tags)
 
 ### Part 3 Citations
-https://docs.docker.com/reference/cli/docker/image/tag/ <br>
-https://git-scm.com/book/en/v2/Git-Basics-Tagging <br>
-https://docs.docker.com/build/ci/github-actions/manage-tags-labels/ <br>
+https://docs.docker.com/reference/cli/docker/image/tag/ Used for docker tags<br> 
+https://git-scm.com/book/en/v2/Git-Basics-Tagging Used for github tags and documentation<br>
+https://docs.docker.com/build/ci/github-actions/manage-tags-labels/ Used for github actions and labels<br>
+
 
