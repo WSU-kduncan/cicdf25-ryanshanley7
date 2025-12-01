@@ -91,9 +91,50 @@ ${{ secrets.DOCKER_TOKEN }}
 These secrets provide for a login into DockerHub, building and pushing docker images, and running a workflow without exposing passwords. <br>
 
 ### CI with GitHub Actions
+When the workflow is triggered, the GirHub Actions automatically run, but only when changes are pushed to the main branch. You can see this in my workflow file in the section below.
+```
+on:
+  push:
+    branches: [ "main" ]
+```
+"on:" is how the events are determined that cause the workflow to run. <br>
+"push:" decides the execution of the workflow, but only when a commit is pushed. <br>
+"branches: [ "main" ]" makes it so it only runs when the main branch gets updated. <br>
+This allows for a new docker image, that gets built and pushed to DockerHub when updates are merged into main. <br><br>
 
+Below are the workflow steps and explanations.
+- This is the first step and is used to download the code of the repository into the GitHub Actions runner.
+- This is needed so that the web content and the dockerfile are avaialble for building.
+```
+- name: Checkout repository
+  uses: actions/checkout@v4
+```
+- Next it prepares the runner for execute the container image build.
+```
+- name: Set up Docker Buildx
+  uses: docker/setup-buildx-action@v3
+```
+- This is where DockerHub authentication using the secrets happens. 
+```
+- name: Login to DockerHub
+  uses: docker/login-action@v3
+  with:
+    username: ${{ secrets.DOCKER_USERNAME }}
+    password: ${{ secrets.DOCKER_TOKEN }}
+```
+- This is the final step, it publishes a brand new version of the website container to `docker.io/shanley4/p4site:latest`
+```
+- name: Build and push image
+  uses: docker/build-push-action@v5
+  with:
+    context: .
+    file: ./Dockerfile
+    push: true
+    tags: shanley4/p4site:latest
+```
 
 ### Testing & Validating
+
 
 
 
