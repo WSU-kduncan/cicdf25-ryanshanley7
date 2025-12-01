@@ -2,11 +2,11 @@
 The goal of this project was to automate the building and publishing of a docker container image, when the project was updated. GitHub Actions automatically build a new container image and publishes it to DockerHub using versioned tags.<br><br>
 
 The tools used in this project are as follows
-- GitHub
-- GitHub Actions
-- Docker
-- DockerHub
-- WSL
+- GitHub: Stores project files, and detects new tags from Actions.
+- GitHub Actions: Automates building and pushing.
+- Docker: Builds and runs containers locally.
+- DockerHub: Stores the container images, and shows version tags.
+- WSL: Local development environment.
 
 ## Part 1 – Create a Docker container image
 
@@ -274,6 +274,7 @@ docker pull shanley4/p4site:4.0.0
 https://docs.docker.com/reference/cli/docker/image/tag/ Used for docker tags<br> 
 https://git-scm.com/book/en/v2/Git-Basics-Tagging Used for github tags and documentation<br>
 https://docs.docker.com/build/ci/github-actions/manage-tags-labels/ Used for github actions and labels<br>
+
 
 
 
