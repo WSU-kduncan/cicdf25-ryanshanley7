@@ -8,6 +8,8 @@ The tools used in this project are as follows
 - DockerHub: Stores the container images, and shows version tags.
 - WSL: Local development environment.
 
+![Diagram](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/images/p4diagram.png)
+
 ## Part 1 – Create a Docker container image
 
 In this section I created a docker container image, which hosts my Honda Civic Type R website using Apache HTTP server (httpd:2.4) <br>
@@ -274,6 +276,7 @@ docker pull shanley4/p4site:4.0.0
 https://docs.docker.com/reference/cli/docker/image/tag/ Used for docker tags<br> 
 https://git-scm.com/book/en/v2/Git-Basics-Tagging Used for github tags and documentation<br>
 https://docs.docker.com/build/ci/github-actions/manage-tags-labels/ Used for github actions and labels<br>
+
 
 
 
