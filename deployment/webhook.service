@@ -1,0 +1,12 @@
+[Unit]
+Description=Webhook Listener
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/webhook -hooks /home/ubuntu/deployment/refresh-hook.json -port 9000 -verbose
+Restart=always
+User=ubuntu
+WorkingDirectory=/home/ubuntu/deployment
+
+[Install]
+WantedBy=multi-user.target
