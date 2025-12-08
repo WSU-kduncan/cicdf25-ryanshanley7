@@ -1,4 +1,10 @@
 # Project 5
+## Documentation
+### Continuous Deployment Project Overview
+What is the goal of this project
+What tools are used in this project and what are their roles
+Diagram of project (placeholder)
+
 ## Part 1
 ### EC2 Instance Details
 - My EC2 was launched using Ubuntu Server 22.04 LTS (HVM), SSD Volume Type, with an AMI ID of: `ami-0ecb62995f68bb549` 
@@ -67,8 +73,8 @@ To test/verify that the script successfully performs its taskings do the followi
 - When you refresh the webpage the update should be applied,
 
 ### Sources
-https://docs.docker.com/engine/containers/run/ <br>
-https://stackoverflow.com/questions/54666604/how-to-refresh-your-shell-when-using-a-dockerfile <br>
+https://docs.docker.com/engine/containers/run/ Used for refreshing myself with containers. <br>
+https://stackoverflow.com/questions/54666604/how-to-refresh-your-shell-when-using-a-dockerfile Sort of helpful for the refresh script.<br>
 
 
 ## Part 2
@@ -132,9 +138,9 @@ sudo systemctl status webhook
 Link to my webhook.service file: [webhook.service](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/deployment/webhook.service)
 
 ### Sources
-https://docs.github.com/en/webhooks/about-webhooks <br>
-https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks <br>
-https://stackoverflow.com/questions/4480677/standard-way-of-setting-a-webserver-deploy-using-webhooks <br>
+https://docs.github.com/en/webhooks/about-webhooks Used for webhooks, and setting them up.<br>
+https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks This was also used for webhooks and setting them up. <br>
+https://stackoverflow.com/questions/4480677/standard-way-of-setting-a-webserver-deploy-using-webhooks This was used for implementation of webhooks. <br>
 
 ## Part 3
 ### Configuring a Payload Sender
@@ -168,6 +174,7 @@ Save that webhook and you're done with that part.
 
 ### Sources
 No sources used for this part, except ones in the project directions.
+
 
 
 
