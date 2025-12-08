@@ -1,9 +1,22 @@
 # Project 5
 ## Documentation
 ### Continuous Deployment Project Overview
-What is the goal of this project
-What tools are used in this project and what are their roles
-Diagram of project (placeholder)
+- What is the goal of this project
+  - The goal of this project was to build a automatic deployment for an EC2 hosted web server. 
+- What tools are used in this project and what are their roles
+  - AWS EC2
+    - Hosts the webs server, and environment.
+  - Docker
+    - Puts website into a container on EC2 instance
+    - Pulls newest version from DockerHub
+    - Stops, removes, and restarts
+  - DockerHub
+    - Serves the image  
+  - GitHub 
+    - Lets EC2 server that a new image is available
+    - Triggers the webhook
+- Diagram of project (placeholder)
+![Diagram]()
 
 ## Part 1
 ### EC2 Instance Details
@@ -174,6 +187,7 @@ Save that webhook and you're done with that part.
 
 ### Sources
 No sources used for this part, except ones in the project directions.
+
 
 
 
