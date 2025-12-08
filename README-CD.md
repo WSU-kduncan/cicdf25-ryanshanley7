@@ -15,8 +15,8 @@
   - GitHub 
     - Lets EC2 server that a new image is available
     - Triggers the webhook
-- Diagram of project (placeholder) <br>
-![Diagram]()
+- Diagram of project <br>
+![Diagram](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/images/P5Diagram.png)
 
 ## Part 1
 ### EC2 Instance Details
@@ -187,6 +187,7 @@ Save that webhook and you're done with that part.
 
 ### Sources
 No sources used for this part, except ones in the project directions.
+
 
 
 
