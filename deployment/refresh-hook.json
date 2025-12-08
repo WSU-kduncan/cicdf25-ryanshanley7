@@ -1,0 +1,23 @@
+[
+  {
+    "id": "refresh-container",
+    "execute-command": "/home/ubuntu/deployment/refresh.sh",
+    "command-working-directory": "/home/ubuntu/deployment",
+    "response-message": "Refresh script executed.",
+    "trigger-rule": {
+      "and": [
+        {
+          "match": {
+            "type": "payload-hash-sha256",
+            "secret": "26bcfd4b3f15a673ce315fcdd4d17c06c4ff3662",
+            "parameter": {
+              "source": "header",
+              "name": "X-Hub-Signature-256",
+              "remove-prefix": "sha256="
+            }
+          }
+        }
+      ]
+    }
+  }
+]
