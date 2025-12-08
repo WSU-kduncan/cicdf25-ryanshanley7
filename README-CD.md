@@ -50,3 +50,25 @@ To verify that the container is successfully serving the web application do the 
 - The running container can also be checked on the command line with `docker ps`
 
 ### Scripting Container Application Refresh
+The purpose of `refresh.sh` is to make the refreshing of the running container automated whenevr a new image is available on DockerHub. <br>
+The script does the following tasks:
+- First it stops currently running container.
+- Then it removes the old container.
+- Next it pulls the newest image from DockerHub.
+- Then it runs a container with the `-d` flag, so in detatched mode.
+- Finally it uses `--restart` to restart if the instance reboots. <br>
+Link to my refresh bash script: [refresh.sh](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/deployment/refresh.sh) <br>
+
+To test/verify that the script successfully performs its taskings do the following:
+- Run the script with this command `bash refresh.sh`
+- Check your running containers with this command `docker ps`
+- You should see your container running, or you can also go to your browser and go here `http://[your-EC2-public-IP]`
+- You can make a change to your website, for example pushing a new version then run the same bash command from earlier `bash refresh.sh`
+- When you refresh the webpage the update should be applied,
+
+## Part 2
+### Configuring a webhook Listener on EC2 Instance
+
+
+### Configure a webhook Service on EC2 Instance
+
