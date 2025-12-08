@@ -67,16 +67,52 @@ To test/verify that the script successfully performs its taskings do the followi
 - When you refresh the webpage the update should be applied,
 
 ### Sources
+https://docs.docker.com/engine/containers/run/ <br>
+https://stackoverflow.com/questions/54666604/how-to-refresh-your-shell-when-using-a-dockerfile <br>
 
 
 ## Part 2
 ### Configuring a webhook Listener on EC2 Instance
+To install adnanhs webhooks to the EC2 instance, do the following:
+```
+sudo apt update
+sudo apt install -y webhook
+````
+- To verify that worked run this command `webhook --version`
+- It will show a version number if it worked, and not an error.
+- The webhook definition file tells webhook to:
+  - which hook ID to listen for
+  - which script to run
+  - where the script is located
+  - how to validate that GitHub sent the payload
+
+Link to my refresh0hook.json: [refresh-hook.json](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/deployment/refresh-hook.json)
+
+To verify definition file was loaded by webhook do the following:
+- `webhook -hooks /home/ubuntu/deployment/refresh-hook.json -verbose`
+- If it worked you will something similar to this `loaded 1 hook from file`
+- It can also be tested manually with this `curl http://localhost:9000/hooks/refresh-container`
+- The expected outcome is `Hook rules were not satisfied.`
+- Then go to GitHub webhooks, and it should have a green checkmark. (You may have to click resend from GitHub for the checkmark to show.)
+
+To verify webhook is receiving payloads that trigger it do the following:
+- Navigate to your GitHub repository, then find webhooks, and recent deliveries.
+- click "Redeliver" and then "Redeliver" again.
+- If everything worked properly, GitHub will show the green checkmark.
+- To see the webhook logs use this command `sudo journalctl -u webhook -f` this command will update in realtime.
+- What you want to look for in docker process views is:
+  - a newly created container.
+  - that an old container was stopped.
+  - port 80 is mapped correctly.
+  - no repeat names of containers.
+  - and a docker pull success message. 
 
 
 ### Configure a webhook Service on EC2 Instance
 
 
 ### Sources
+
 
 
 
