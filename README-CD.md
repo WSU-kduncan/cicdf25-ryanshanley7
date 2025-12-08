@@ -131,12 +131,43 @@ sudo systemctl status webhook
   
 Link to my webhook.service file: [webhook.service](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/deployment/webhook.service)
 
-
-
 ### Sources
 https://docs.github.com/en/webhooks/about-webhooks <br>
 https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks <br>
 https://stackoverflow.com/questions/4480677/standard-way-of-setting-a-webserver-deploy-using-webhooks <br>
+
+## Part 3
+### Configuring a Payload Sender
+- Justification for selecting GitHub as the payload sender:
+  - I chose GitHub because it seemed easier, and I was more familiar with it than dockerhub.
+  - GitHub action also is responsible for building and pushing new versioned images.
+  - I think GitHub is a little easier to read and navigate as well, but that might be because again i'm more familiar with it.
+- How to enable GitHub to send payloads to the EC2 webhook listener:
+  - First navigate to your GitHub repo, then go to settings.
+  - Find webhooks, and add a new webhook. Configure it as follows.
+```
+Payload URL:    http://EC2-PUBLIC-IP:9000/hooks/refresh-container
+Content Type:   application/json
+Secret:         This can be any string of characters as long as it matches the "secret" value inside refresh-hook.json
+Event Trigger:  Send everything
+
+Save that webhook and you're done with that part.
+```
+- What triggers will send a payload to the EC2 webhook listener:
+  - A payload is sent when a run is completed with these statuses:
+  - Success, Failure, Cancelled.
+  - Each time a new image is built, GitHub then lets the EC2 server know.
+- How to verify a successful payload delivery:
+  - Go to settings in GitHub repo
+  - Navigate to webhooks and recent delivieres and looks for the green checkmark.
+- How to validate that your webhook only triggers when requests are coming from appropriate sources:
+  - `curl http://localhost:9000/hooks/refresh-container`
+  - The expected outcome for this is `Hook rules were not satisfied.` which is actually good.
+  - This won't let the script run unless it has the GitHub signature, and doesn't allow for random attackers to trigger the script.
+  - `sudo journalctl -u webhook -f` You can also check the logs and look for successful or rejected messages.
+
+### Sources
+No sources used for this part, except ones in the project directions.
 
 
 
