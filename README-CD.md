@@ -107,11 +107,37 @@ To verify webhook is receiving payloads that trigger it do the following:
   - no repeat names of containers.
   - and a docker pull success message. 
 
-
 ### Configure a webhook Service on EC2 Instance
+- Summary of webhook service file contents is as follows:
+  - Starting the webhook binary on system boot
+  - Pointing the webhook process to the hook definition file (refresh-hook.json)
+  - Ensuring the listener binds to port 9000
+  - Keeping the webhook process alive using systemd
+- How to enable and start the webhook service
+```
+sudo systemctl daemon-reload
+sudo systemctl enable webhook
+sudo systemctl start webhook
+sudo systemctl status webhook
+```
+  - If those commands worked, you will see in green text `Active: active (running)`
+- to verify webhook service is capturing payloads and triggering the bash script
+  - Go to GitHub repo.
+  - Navigate to settings, then webhooks, then redeliver.
+  - When you click on a resend, it should show a green checkmark or `Status 200 OK`
+  - You can also check the logs with `sudo journalctl -u webhook -f` and look for success messages.
+  - Use `docker ps -a` and make sure the old container was stopped and removed.
+  - A new container should have an up status and recent timestamp as well. <br>
+  
+Link to my webhook.service file: [webhook.service](https://github.com/WSU-kduncan/cicdf25-ryanshanley7/blob/main/deployment/webhook.service)
+
 
 
 ### Sources
+https://docs.github.com/en/webhooks/about-webhooks <br>
+https://docs.github.com/en/webhooks/using-webhooks/creating-webhooks <br>
+https://stackoverflow.com/questions/4480677/standard-way-of-setting-a-webserver-deploy-using-webhooks <br>
+
 
 
 
