@@ -15,7 +15,7 @@
   - GitHub 
     - Lets EC2 server that a new image is available
     - Triggers the webhook
-- Diagram of project (placeholder)
+- Diagram of project (placeholder) <br>
 ![Diagram]()
 
 ## Part 1
@@ -187,6 +187,7 @@ Save that webhook and you're done with that part.
 
 ### Sources
 No sources used for this part, except ones in the project directions.
+
 
 
 
